@@ -53,23 +53,23 @@ def finalfight():
         print ("Try 'shooting' in the direction of the beast")
         time.sleep(3)
         print ("")
-        print ("You hear a beastly screech coming from the west.")
+        print ("You hear a beastly screech coming from the west.") # HERE THE PLAYER IS INFORMED VIA THE DIRECTION, BUT WILL MISS IF THEY FOLLOW.
         print ("")
         first()
 
 
 
-def first():
+def first(): #FIRST PHASE. 
     if beast == 1:
         fristshot = ""
         firstshot = input ("Which direction would you like to shoot? ")
-        if firstshot == ("north"):
+        if firstshot == ("north"): #this is the correct going, because its where the boss will be (following counterclockwise around a compass)
             print ("")
             print ("The beast lets out a scream as if it were hit!")
             time.sleep(3)
             print ("")
             global bhealth
-            bhealth = bhealth - 1
+            bhealth = bhealth - 1 #this is the boss recieving damage and the stages of it.
             if bhealth == 2:
                 print ("Barrow: Good work! I doubt it could take much more of this!")
             elif bhealth == 1:
@@ -82,7 +82,7 @@ def first():
             time.sleep(6)
             print ("")
             second()
-        elif firstshot == ("south"):
+        elif firstshot == ("south"): #This is where the player will miss.
             print ("")
             print ("Your bullet misses!")
             print ("")
@@ -94,7 +94,7 @@ def first():
             time.sleep(6)
             print ("")
             second()
-        elif firstshot == ("west"):
+        elif firstshot == ("west"): #this is when the player makes the same choice as the noise, they will be notificated on the direction of the boss and will have to think about its next movements via the sound
             print ("")
             print ("Your bullet just misses!")
             print ("")
@@ -106,7 +106,7 @@ def first():
             time.sleep(6)
             print ("")
             second()
-        elif firstshot == ("east"):
+        elif firstshot == ("east"): # this is when the player makes the complete wrong choice, they will recieve damage and eventually die.
             print ("")
             print ("The beast lunges at you from behind...")
             print ("")
@@ -125,7 +125,7 @@ def first():
             print ("")
             time.sleep(6)
             second()
-        else:
+        else: #this is a repeat if the player makes an invalid inpuit.
             fristshot1 = ""
             firstshot1 = input ("Which direction would you like to shoot? ")
             if firstshot1 == ("north"):
@@ -189,7 +189,7 @@ def first():
                 time.sleep(6)
                 second()
 
-def second():
+def second(): #Phase two....This is the same idea but here the player is informed that the boss is rotating clockwise and he needs to predict its movements.
     if beast == 1:
         print ("You hear the beast screeching from the North")
         print ("")
